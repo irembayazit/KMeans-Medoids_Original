@@ -13,20 +13,20 @@ def fixData(df):
 
     data = _data.to_numpy()
 
-    print("data: ", data)
+    # print("data: ", data)
     # print("data", data)
 
     # df.shape[1]: sutun sayısını getirir, son sutun olan "class"ları almakta kullanılır
     _title = df.loc[:, "class"]
     # print("title", _title.to_numpy())
-    print("_title: ", _title)
+    # print("_title: ", _title)
 
     title = np.concatenate(_title.to_numpy(), axis=None)  # tüm dizileri tek bir dizi haline getirdi
-    print("title: ", title)
+    # print("title: ", title)
 
     # print("new_title: ", title)
     classType = Counter(title);
-    print("counter ile hesaplanmıs title: ", classType)
+    # print("counter ile hesaplanmıs title: ", classType)
     # print("counter ile hesaplanmıs title: ", classType.keys())
 
     titleNames = []
