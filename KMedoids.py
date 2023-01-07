@@ -31,7 +31,7 @@ def kmedoids(data):
     elbow = kl.elbow
     print("elbow", elbow)
 
-    kMedoids = KMedoids(n_clusters=2, random_state=10)
+    kMedoids = KMedoids(n_clusters=elbow, random_state=10)
     kMedoids.fit(data)
     # kMedoids.fit_predict(data_scaled)
 
