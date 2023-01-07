@@ -26,10 +26,11 @@ def kmedoids(data):
     plt.show()
 
     kl = KneeLocator(
-        range(1, 11), inertias, S=1.0, curve="convex", direction="decreasing"
+        range(1, 11), inertias, curve="convex", direction="decreasing"
     )
+
     elbow = kl.elbow
-    print("elbow", elbow)
+    print("elbow:.", elbow)
 
     kMedoids = KMedoids(n_clusters=elbow, random_state=10)
     kMedoids.fit(data)

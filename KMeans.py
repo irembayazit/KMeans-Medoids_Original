@@ -21,11 +21,11 @@ def kmeans(data):
     plt.show()
 
     kl = KneeLocator(
-        range(1, 11), inertias, S=1.0, curve="convex", direction="decreasing"
+        range(1, 11), inertias, curve="convex", direction="decreasing"
     )
 
     elbow = kl.elbow
-    print("elbow: : ", elbow)
+    print("elbow: ", elbow)
 
     kmeans = KMeans(n_clusters=elbow, n_init=10, random_state=2)
     kmeans.fit(data)
