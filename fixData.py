@@ -8,7 +8,7 @@ import pandas as pd
 def fixData(df):
     # print("df", df)
 
-    _df = df.drop(["Class"], axis=1)
+    _df = df.drop(["class"], axis=1)
     _data = _df.iloc[:, :]
 
     data = _data.to_numpy()
@@ -17,7 +17,7 @@ def fixData(df):
     # print("data", data)
 
     # df.shape[1]: sutun sayısını getirir, son sutun olan "class"ları almakta kullanılır
-    _title = df.loc[:, "Class"]
+    _title = df.loc[:, "class"]
     # print("title", _title.to_numpy())
     print("_title: ", _title)
 
