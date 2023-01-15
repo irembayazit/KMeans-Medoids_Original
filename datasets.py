@@ -3,14 +3,13 @@ import pandas as pd
 
 def datasets():
     # OK kmeans: 89.33, kmedoids: 84.0
-    # kmeans'de random_state:2, kmedoids'de data_scaled kullanılmalı
+    # kmeans'de random_state:2, kmedoids'de standart scaler kullanılmalı
     iris = pd.read_csv('https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data',
                        names=["Sepal Length", "Sepal Width", "Petal Length", "Petal Width", "class"])
 
     # kmeans: 50.6 - kmedoids: 46.66
     haberman = pd.read_csv('https://archive.ics.uci.edu/ml/machine-learning-databases/haberman/haberman.data',
                            names=["Age", "Year", "Positive", "class"])
-
 
     # kmeans: 30.7 - kmedoids:50.9
     abalone = pd.read_csv('https://archive.ics.uci.edu/ml/machine-learning-databases/abalone/abalone.data',
@@ -29,7 +28,6 @@ def datasets():
     df2 = df.drop(["Auction_ID"], axis=1)
     df3 = df2.drop(["Bidder_ID"], axis=1)
     print(df)
-
 
     class Datas:
         def __init__(self, m, p):

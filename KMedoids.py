@@ -9,7 +9,6 @@ import numpy as np
 def kmedoidss(data):
     scaler = StandardScaler().fit(data)
     data_scaled = scaler.transform(data);
-    # print("data_scaled", data_scaled)
 
     ## uygun küme sayısı belirlenmeye çalışılır
     inertias = []

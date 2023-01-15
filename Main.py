@@ -20,7 +20,6 @@ print("df")
 pd.set_option('display.max_rows', df.shape[0] + 1)
 print(df)
 
-
 data, title = fixData(df)
 np.set_printoptions(threshold=sys.maxsize)
 
