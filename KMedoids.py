@@ -19,7 +19,6 @@ def kmedoidss(data):
         kMedoids.fit_predict(data_scaled)
         inertias.append(kMedoids.inertia_)
 
-    # print(inertias)
     plt.plot(range(1, 11), inertias, marker='o')
     plt.title('K-Medoids Elbow Method')
     plt.xlabel('Number of clusters')
