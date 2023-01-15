@@ -4,7 +4,7 @@ from kneed import KneeLocator
 import matplotlib.pyplot as plt
 
 
-def kmedoidss(data):
+def kmedoidss(data, cluster):
     scaler = StandardScaler().fit(data)
     data_scaled = scaler.transform(data);
 
@@ -30,8 +30,8 @@ def kmedoidss(data):
     elbow = kl.elbow
     print("elbow:.", elbow)
 
-    kMedoids = KMedoids(n_clusters=2, random_state=10)
-    kMedoids.fit(data)
-    kMedoids.fit_predict(data)
+    kMedoids = KMedoids(n_clusters=cluster, random_state=10)
+    kMedoids.fit(data_scaled)
+    kMedoids.fit_predict(data_scaled)
 
     return kMedoids.labels_
