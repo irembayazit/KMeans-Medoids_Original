@@ -4,14 +4,13 @@ import matplotlib.pyplot as plt
 
 
 # Amaç !! yapılan her bir tahmini sınıflandırma için doğruluk değerini dondurur
-
 def Func(realValue, predictValue):
     confusion = confusion_matrix(realValue, predictValue)
     print("confusion matrix : ")
     print(confusion)
 
     basariOranlari = []
-    for line in range(confusion.shape[1]):  # karşılaştırma sonucu oluşan matrisi döner
+    for line in range(confusion.shape[1]):
         for column in range(confusion.shape[0]):
             if (line == column):
                 if (Counter(realValue)[line] != 0):

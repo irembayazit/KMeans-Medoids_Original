@@ -2,8 +2,6 @@ from sklearn.preprocessing import StandardScaler
 from sklearn_extra.cluster import KMedoids
 from kneed import KneeLocator
 import matplotlib.pyplot as plt
-from pyclustering.cluster.kmedoids import kmedoids
-import numpy as np
 
 
 def kmedoidss(data):
@@ -35,32 +33,5 @@ def kmedoidss(data):
     kMedoids = KMedoids(n_clusters=2, random_state=10)
     kMedoids.fit(data)
     kMedoids.fit_predict(data)
-
-    # print(len(data))
-    # kmedoids_instance = kmedoids(data, [20, 60, 40])
-    # kmedoids_instance.process()
-    # clusters = kmedoids_instance.get_clusters()
-    # medoids = kmedoids_instance.get_medoids()
-    # print("- Data length: %d" % len(data))
-    # print("- Amount clusters: %d" % len(clusters))
-    # print("clusters,", clusters)
-    # print("clusters,", len(clusters[0]))
-    # print("clusters,", len(clusters[1]))
-    # print("medoids:", medoids)
-    #
-    # predict_cluster = []
-    # for index in range(0, len(data)):
-    #     for asd, cluster in enumerate(clusters):
-    #         for data in cluster:
-    #             if index == data:
-    #                 predict_cluster.append(asd)
-
-    # for i, asd in enumerate(predict_cluster):
-    #     if(predict_cluster[i] == 2):
-    #         predict_cluster[i] = 0
-    #     elif(predict_cluster[i] == 0):
-    #         predict_cluster[i] = 2
-
-    # print("predict_cluster:", predict_cluster)
 
     return kMedoids.labels_

@@ -3,7 +3,6 @@ import pandas as pd
 
 def datasets():
     # OK kmeans: 89.33, kmedoids: 84.0
-    # kmeans'de random_state:2, kmedoids'de standart scaler kullanılmalı
     iris = pd.read_csv('https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data',
                        names=["Sepal Length", "Sepal Width", "Petal Length", "Petal Width", "class"])
 
@@ -16,7 +15,7 @@ def datasets():
                           names=["class", "Length", "Diameter", "Height", "Whole", "Shucked", "Viscera", "Shell",
                                  "Rings"])
 
-    # kmeans: 70.44, kmedoids: 79.11 --> standart scaler kaldır !
+    # kmeans: 70.44, kmedoids: 79.11
     Raisin_Dataset = pd.read_csv('./datasets/Raisin_Dataset.csv')
 
     # kmeans: 78.71 --> random_state=10, kmedoids: 76.47

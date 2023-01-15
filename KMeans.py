@@ -13,7 +13,6 @@ def kmeans(data):
         kmeans.fit(data)
         inertias.append(kmeans.inertia_)
 
-    # print("ortalama hata değerleri: ", inertias)
     plt.plot(range(1, 11), inertias, marker='o')
     plt.title('K-Means Elbow Method')
     plt.xlabel('Number of clusters')
