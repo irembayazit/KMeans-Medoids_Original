@@ -36,8 +36,12 @@ def fixData(df):
     # print("titleNames", titleNames)
     # print("titleNames", titleNames[0])
 
+    # print("df['class']**", df['class'])
+
     for index, value in enumerate(classType.keys()):
         df['class'] = df['class'].replace([titleNames[index]], index)
+
+    # print("df['class']---", df['class'])
 
     # tüm datayı goruntuledik
     pd.set_option('display.max_rows', df.shape[0] + 1)
@@ -46,6 +50,6 @@ def fixData(df):
     a = df['class']
     title = a.to_numpy()
 
-    # print("a", df)
+    # print("a", title)
 
     return data, title

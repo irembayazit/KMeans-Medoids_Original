@@ -27,7 +27,7 @@ def kmeans(data):
     elbow = kl.elbow
     print("elbow: ", elbow)
 
-    kmeans = KMeans(n_clusters=elbow, n_init=10, random_state=2)
+    kmeans = KMeans(n_clusters=2, n_init=10, random_state=2)
     kmeans.fit(data)
 
     return kmeans.labels_
