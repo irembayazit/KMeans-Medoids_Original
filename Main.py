@@ -22,9 +22,9 @@ means_predict = kmeans(data, cluster)
 medoid_predict = kmedoidss(data, cluster)
 
 # print("Func prev", data)
-print("Func prev-", title)
-print("Func prev--", means_predict)
-print("Func prev---", medoid_predict)
+# print("Func prev-", title)
+# print("Func prev--", means_predict)
+# print("Func prev---", medoid_predict)
 
 Func(title, means_predict)
 Func(title, medoid_predict)
