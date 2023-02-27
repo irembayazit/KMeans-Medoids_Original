@@ -4,17 +4,22 @@ from kneed import KneeLocator
 import matplotlib.pyplot as plt
 
 
-def kmedoidss(data, cluster):
+def kmedoidss(data, cluster, std_scaler):
     scaler = StandardScaler().fit(data)
-    data_scaled = scaler.transform(data);
+    data_scaled = scaler.transform(data)
 
     ## uygun küme sayısı belirlenmeye çalışılır
     inertias = []
 
     for i in range(1, 11):
         kMedoids = KMedoids(n_clusters=i)
-        kMedoids.fit(data_scaled)
-        kMedoids.fit_predict(data_scaled)
+        if (std_scaler == 'false'):
+            kMedoids.fit(data)
+            kMedoids.fit_predict(data)
+        else:
+            kMedoids.fit(data_scaled)
+            kMedoids.fit_predict(data_scaled)
+
         inertias.append(kMedoids.inertia_)
 
     plt.plot(range(1, 11), inertias, marker='o')
@@ -31,7 +36,11 @@ def kmedoidss(data, cluster):
     print("elbow:.", elbow)
 
     kMedoids = KMedoids(n_clusters=cluster, random_state=10)
-    kMedoids.fit(data_scaled)
-    kMedoids.fit_predict(data_scaled)
+    if (std_scaler == 'false'):
+        kMedoids.fit(data)
+        kMedoids.fit_predict(data)
+    else:
+        kMedoids.fit(data_scaled)
+        kMedoids.fit_predict(data_scaled)
 
     return kMedoids.labels_

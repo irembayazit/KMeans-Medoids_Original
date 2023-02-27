@@ -3,7 +3,7 @@ from sklearn.cluster import KMeans
 from kneed import KneeLocator
 
 
-def kmeans(data, cluster):
+def kmeans(data, cluster, randomState):
     # uygun küme sayısı belirlenmeye çalışılır
     # inertias: hata değerlerini tutar ve küme sayısını bulmamıza yardımcı olur.
     inertias = []
@@ -26,7 +26,7 @@ def kmeans(data, cluster):
     elbow = kl.elbow
     print("elbow: ", elbow)
 
-    kmeans = KMeans(n_clusters=cluster, n_init=10, random_state=2)
+    kmeans = KMeans(n_clusters=cluster, n_init=10, random_state=randomState)
     kmeans.fit(data)
 
     return kmeans.labels_

@@ -22,7 +22,7 @@ def Datasets():
     # kmeans: 78.71 --> random_state=10, kmedoids: 76.47
     sobar = pd.read_csv('./datasets/sobar-72.csv')
 
-    # kmeans: 47.59 - kmedoids: 48.45
+    # kmeans: 47.59 - kmedoids: 52.56
     shill_bidding = pd.read_csv('./datasets/shill_bidding.csv')
     shill_bidding = shill_bidding.drop(["Record_ID"], axis=1)
     shill_bidding = shill_bidding.drop(["Auction_ID"], axis=1)
@@ -32,26 +32,38 @@ def Datasets():
         {
             "data": iris,
             "classNumber": 3,
+            "stdScaler": 'true',
+            "randomState": 2,
         },
         {
             "data": haberman,
             "classNumber": 2,
+            "stdScaler": 'true',
+            "randomState": 2,
         },
         {
             "data": abalone,
             "classNumber": 3,
+            "stdScaler": 'true',
+            "randomState": 2,
         },
         {
             "data": Raisin_Dataset,
+            "stdScaler": 'false',
             "classNumber": 2,
+            "randomState": 2,
         },
         {
             "data": sobar,
             "classNumber": 2,
+            "stdScaler": 'true',
+            "randomState": 10,
         },
         {
             "data": shill_bidding,
             "classNumber": 2,
+            "stdScaler": 'true',
+            "randomState": 2,
         },
     ]
     return datasets
